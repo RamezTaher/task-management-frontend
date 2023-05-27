@@ -10,6 +10,7 @@ import ClientSignIn from "./pages/ClientSignIn"
 import ClientRegister from "./pages/ClientRegister"
 import ConsultantSignIn from "./pages/ConsultantSignIn"
 import ConsultantRegister from "./pages/ConsultantRegister"
+import AdminSignIn from "./pages/AdminSignIn"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           path="/auth/consultant/register"
           element={<ConsultantRegister />}
         />
+        <Route path="/auth/admin/login" element={<AdminSignIn />} />
 
         {/* <Route path="/auth/register" element={<SignUp />} />
         <Route path="/platform/dashboard" element={<EmployeeDashboard />} />

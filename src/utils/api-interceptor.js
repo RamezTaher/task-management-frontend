@@ -16,6 +16,8 @@ export const logConsultant = (data) =>
 export const registerConsultant = (data) =>
   api.post(`/auth/consultant/register`, data, config)
 
+export const logAdmin = (data) => api.post(`/auth/admin/login`, data, config)
+
 export const postLogUser = (data) => api.post(`/auth/login`, data, config)
 
 // Departments
