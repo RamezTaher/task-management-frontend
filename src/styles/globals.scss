@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "base/normalize";
+@import "base/reset";
+@import "base/typography";
+@import "base/icon";
+@import "components/scrollbar";
+@import "components/buttons";
+@import "components/inputs";
+
+.table * td,
+.table * th {
+  @apply border-solid border-secondary-tint border-[1px] py-2 px-3 text-center text-sm;
+}
