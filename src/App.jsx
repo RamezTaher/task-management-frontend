@@ -8,6 +8,8 @@ import AdminLeaveRequest from "./pages/AdminLeaveRequest"
 import AdminLeaveRequestDetails from "./pages/AdminLeaveRequestDetails"
 import ClientSignIn from "./pages/ClientSignIn"
 import ClientRegister from "./pages/ClientRegister"
+import ConsultantSignIn from "./pages/ConsultantSignIn"
+import ConsultantRegister from "./pages/ConsultantRegister"
 
 function App() {
   return (
@@ -16,6 +18,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/auth/client/login" element={<ClientSignIn />} />
         <Route path="/auth/client/register" element={<ClientRegister />} />
+        <Route path="/auth/consultant/login" element={<ConsultantSignIn />} />
+        <Route
+          path="/auth/consultant/register"
+          element={<ConsultantRegister />}
+        />
 
         {/* <Route path="/auth/register" element={<SignUp />} />
         <Route path="/platform/dashboard" element={<EmployeeDashboard />} />

@@ -11,6 +11,11 @@ export const logClient = (data) => api.post(`/auth/client/login`, data, config)
 export const registerClient = (data) =>
   api.post(`/auth/client/register`, data, config)
 
+export const logConsultant = (data) =>
+  api.post(`/auth/consultant/login`, data, config)
+export const registerConsultant = (data) =>
+  api.post(`/auth/consultant/register`, data, config)
+
 export const postLogUser = (data) => api.post(`/auth/login`, data, config)
 
 // Departments
