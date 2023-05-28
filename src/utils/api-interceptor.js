@@ -26,7 +26,9 @@ export const getClientProfile = () => api.get(`/auth/client/status`, config)
 
 export const logAdmin = (data) => api.post(`/auth/admin/login`, data, config)
 
-export const postLogUser = (data) => api.post(`/auth/login`, data, config)
+// Tickets
+
+export const createTicket = (data) => api.post(`/tickets`, data, config)
 
 // Departments
 export const getDepartments = () => axios.get(`${API_URL}/department`, config)
