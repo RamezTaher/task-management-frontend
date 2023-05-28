@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
-import { logClient, logConsultant } from "../utils/api-interceptor"
+import { logConsultant } from "../utils/api-interceptor"
 import Loader from "../components/Loader"
 
 const ConsultantSignIn = () => {
