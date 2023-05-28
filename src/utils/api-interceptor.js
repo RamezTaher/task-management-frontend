@@ -29,6 +29,8 @@ export const logAdmin = (data) => api.post(`/auth/admin/login`, data, config)
 // Tickets
 
 export const createTicket = (data) => api.post(`/tickets`, data, config)
+export const getProjectsByClient = (status) =>
+  api.get(`/tickets/client/all?status=${status}`, config)
 
 // Departments
 export const getDepartments = () => axios.get(`${API_URL}/department`, config)

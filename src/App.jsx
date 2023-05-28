@@ -13,6 +13,7 @@ import ConsultantRegister from "./pages/ConsultantRegister"
 import AdminSignIn from "./pages/AdminSignIn"
 import ClientDashboard from "./pages/ClientDashboard"
 import ClientStartProject from "./pages/ClientStartProject"
+import ClientControlProjects from "./pages/ClientControlProjects"
 
 function App() {
   return (
@@ -34,6 +35,10 @@ function App() {
         <Route
           path="/platform/client/start-project"
           element={<ClientStartProject />}
+        />
+        <Route
+          path="/platform/client/projects"
+          element={<ClientControlProjects />}
         />
 
         {/* <Route path="/auth/register" element={<SignUp />} />
