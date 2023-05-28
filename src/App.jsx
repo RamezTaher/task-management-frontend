@@ -14,6 +14,7 @@ import AdminConsultants from "./pages/AdminConsultants"
 import AdminClients from "./pages/AdminClients"
 import AdminConsultantDetails from "./pages/AdminConsultantDetails"
 import AdminClientDetails from "./pages/AdminClientDetails"
+import AdminProjects from "./pages/AdminProjects"
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
           path="/platform/admin/clients/:id"
           element={<AdminClientDetails />}
         />
+        <Route path="/platform/admin/projects" element={<AdminProjects />} />
 
         {/* <Route path="/auth/register" element={<SignUp />} />
         <Route path="/platform/dashboard" element={<EmployeeDashboard />} />

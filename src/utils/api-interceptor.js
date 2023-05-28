@@ -33,6 +33,9 @@ export const createTicket = (data) => api.post(`/tickets`, data, config)
 export const getProjectsByClient = (status) =>
   api.get(`/tickets/client/all?status=${status}`, config)
 
+export const getAllProjects = (status) =>
+  api.get(`/tickets?status=${status}`, config)
+
 export const getProjectById = (id) => api.get(`/tickets/${id}`, config)
 export const updateProject = (id, data) =>
   api.put(`/tickets/${id}`, data, config)
