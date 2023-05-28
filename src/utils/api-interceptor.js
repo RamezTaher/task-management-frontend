@@ -39,4 +39,13 @@ export const updateProject = (id, data) =>
 
 // Admin
 export const getAllConsultants = () => api.get(`/consultants`, config)
+export const getConsultantById = (id) => api.get(`/consultants/${id}`, config)
 export const getAllClients = () => api.get(`/clients`, config)
+
+export const getClientById = (id) => api.get(`/clients/${id}`, config)
+export const updateClient = (id, data) =>
+  api.put(`/clients/${id}`, data, config)
+export const deleteClient = (id) => api.delete(`/clients/${id}`, config)
+export const updateConsultant = (id, data) =>
+  api.put(`/consultants/${id}`, data, config)
+export const deleteConsultant = (id) => api.delete(`/consultants/${id}`, config)

@@ -50,6 +50,11 @@ const AdminClients = () => {
       <section>
         <div className="container mx-auto h-full py-10">
           <div className="space-y-4">
+            <Link to={"/platform/admin/clients"}>
+              <div className="bg-blue-500 w-[100px] py-2 flex justify-center text-white">
+                Go Back
+              </div>
+            </Link>
             <h1 className="text-2xl font-semiBold mb-6">All Consultants</h1>
             <table className="border-secondary-tint border-solid border-2 border-collapse w-full table">
               <thead>

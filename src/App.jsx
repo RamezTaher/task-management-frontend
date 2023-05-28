@@ -12,6 +12,8 @@ import ClientControlProjectDetail from "./pages/ClientControlProjectDetail"
 import AdminDashboard from "./pages/AdminDashboard"
 import AdminConsultants from "./pages/AdminConsultants"
 import AdminClients from "./pages/AdminClients"
+import AdminConsultantDetails from "./pages/AdminConsultantDetails"
+import AdminClientDetails from "./pages/AdminClientDetails"
 
 function App() {
   return (
