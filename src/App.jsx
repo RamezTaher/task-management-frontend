@@ -48,6 +48,14 @@ function App() {
           element={<AdminConsultants />}
         />
         <Route path="/platform/admin/clients" element={<AdminClients />} />
+        <Route
+          path="/platform/admin/consultants/:id"
+          element={<AdminConsultantDetails />}
+        />
+        <Route
+          path="/platform/admin/clients/:id"
+          element={<AdminClientDetails />}
+        />
 
         {/* <Route path="/auth/register" element={<SignUp />} />
         <Route path="/platform/dashboard" element={<EmployeeDashboard />} />
