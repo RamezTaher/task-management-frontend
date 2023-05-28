@@ -23,6 +23,7 @@ export const registerConsultant = (data) =>
   api.post(`/auth/consultant/register`, data, config)
 
 export const getClientProfile = () => api.get(`/auth/client/status`, config)
+export const getAdminProfile = () => api.get(`/auth/admin/status`, config)
 
 export const logAdmin = (data) => api.post(`/auth/admin/login`, data, config)
 
@@ -36,38 +37,5 @@ export const getProjectById = (id) => api.get(`/tickets/${id}`, config)
 export const updateProject = (id, data) =>
   api.put(`/tickets/${id}`, data, config)
 
-// Departments
-export const getDepartments = () => axios.get(`${API_URL}/department`, config)
-export const getDepartmentById = (id) =>
-  axios.get(`${API_URL}/department/${id}`, config)
-
-// Leave Request
-export const getLeaveRequests = (leaveRequestStatus) =>
-  axios.get(`${API_URL}/leave-request?status=${leaveRequestStatus}`, config)
-
-export const getLeaveRequestById = (id) =>
-  axios.get(`${API_URL}/leave-request/${id}`, config)
-
-export const getLeaveRequestByEmployee = (id) =>
-  axios.get(`${API_URL}/leave-request/employee/${id}`, config)
-
-export const postLeaveRequest = (data) =>
-  axios.post(`${API_URL}/leave-request`, data, config)
-
-export const updateLeaveRequest = (id, data) =>
-  axios.put(`${API_URL}/leave-request/${id}`, data, config)
-
-// Leave Type
-export const getLeaveTypes = () => axios.get(`${API_URL}/leave-type`, config)
-export const getLeaveTypeById = (id) =>
-  axios.get(`${API_URL}/leave-type/${id}`, config)
-
-// Employee
-
-export const getEmployeeById = (id) =>
-  axios.get(`${API_URL}/employee/${id}`, config)
-export const getEmployees = () => axios.get(`${API_URL}/employee`, config)
-export const deleteEmployee = (id) =>
-  axios.delete(`${API_URL}/employee/${id}`, config)
-export const updateEmployee = (id, data) =>
-  axios.put(`${API_URL}/employee/${id}`, data, config)
+// Admin
+export const getAllConsultants = () => api.get(`/consultants`, config)

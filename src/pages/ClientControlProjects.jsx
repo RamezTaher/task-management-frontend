@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Header from "../components/Header"
-import {
-  getClientProfile,
-  getLeaveRequests,
-  getProjectsByClient,
-} from "../utils/api-interceptor"
+import { getClientProfile, getProjectsByClient } from "../utils/api-interceptor"
 import AdminLeaveReqTableRow from "../components/AdminLeaveReqTableRow"
 import Loader from "../components/Loader"
 import { format, parseISO } from "date-fns"

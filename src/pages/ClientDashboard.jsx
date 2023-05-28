@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { format, parseISO } from "date-fns"
 import Header from "../components/Header"
-import { getClientProfile, getDepartmentById } from "../utils/api-interceptor"
+import { getClientProfile } from "../utils/api-interceptor"
 import { useNavigate } from "react-router-dom"
 import Loader from "../components/Loader"
 

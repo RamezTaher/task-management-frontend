@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { getDepartmentById } from "../utils/api-interceptor"
 import { format, parseISO } from "date-fns"
 import { AiFillDelete, AiFillEdit } from "react-icons/ai"
 import { useNavigate } from "react-router-dom"

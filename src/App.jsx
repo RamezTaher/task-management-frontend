@@ -1,11 +1,5 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
-import EmployeeDashboard from "./pages/EmployeeDashboard"
-import EmployeeLeaveRequest from "./pages/EmployeeLeaveRequest"
-import AdminDashboardEmployees from "./pages/AdminDashboardEmployees"
-import AdminEditEmployee from "./pages/AdminEditEmployee"
-import AdminLeaveRequest from "./pages/AdminLeaveRequest"
-import AdminLeaveRequestDetails from "./pages/AdminLeaveRequestDetails"
 import ClientSignIn from "./pages/ClientSignIn"
 import ClientRegister from "./pages/ClientRegister"
 import ConsultantSignIn from "./pages/ConsultantSignIn"
@@ -15,6 +9,8 @@ import ClientDashboard from "./pages/ClientDashboard"
 import ClientStartProject from "./pages/ClientStartProject"
 import ClientControlProjects from "./pages/ClientControlProjects"
 import ClientControlProjectDetail from "./pages/ClientControlProjectDetail"
+import AdminDashboard from "./pages/AdminDashboard"
+import AdminConsultants from "./pages/AdminConsultants"
 
 function App() {
   return (
@@ -44,6 +40,11 @@ function App() {
         <Route
           path="/platform/client/projects/:id"
           element={<ClientControlProjectDetail />}
+        />
+        <Route path="/platform/admin/dashboard" element={<AdminDashboard />} />
+        <Route
+          path="/platform/admin/consultants"
+          element={<AdminConsultants />}
         />
 
         {/* <Route path="/auth/register" element={<SignUp />} />
