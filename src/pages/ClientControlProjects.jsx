@@ -54,6 +54,11 @@ const ClientControlProjects = () => {
       <section>
         <div className="container mx-auto h-full py-10">
           <div className="space-y-4">
+            <Link to={"/platform/client/dashboard"}>
+              <div className="bg-blue-500 w-[100px] py-2 flex justify-center text-white">
+                Go Back
+              </div>
+            </Link>
             <h1 className="text-2xl font-semiBold mb-6">Your Projects :</h1>
 
             <div className="flex items-center gap-3 mb-4">
@@ -119,12 +124,28 @@ const ClientControlProjects = () => {
                           format(parseISO(element.endDate), "dd MMMM Y")}{" "}
                       </td>
 
-                      <td>{element.status}</td>
+                      <td>
+                        <div
+                          className={`py-2 text-white ${
+                            element.status === "resolved"
+                              ? "bg-green-500"
+                              : element.status === "closed"
+                              ? "bg-red-500"
+                              : element.status === "in-progress"
+                              ? "bg-yellow-500"
+                              : element.status === "open"
+                              ? "bg-blue-500"
+                              : ""
+                          }`}
+                        >
+                          {element.status}
+                        </div>
+                      </td>
                       <td>{element.feedback ?? "No Feedback Yet"}</td>
-                      <td>{element.solutio ?? "No Solution Yet"}</td>
+                      <td>{element.solution ?? "No Solution Yet"}</td>
 
                       <td>
-                        <Link to={``}>
+                        <Link to={`/platform/client/projects/${element.id}`}>
                           <div className="h-full w-full flex items-center justify-center">
                             <FaTimes size={18} />
                           </div>

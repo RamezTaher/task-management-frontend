@@ -4,7 +4,7 @@ import Header from "../components/Header"
 import { DatePicker } from "antd"
 import Loader from "../components/Loader"
 import { createTicket, getClientProfile } from "../utils/api-interceptor"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const ClientStartProject = () => {
   const navigate = useNavigate()
@@ -74,7 +74,12 @@ const ClientStartProject = () => {
       <Header user={user} />
       <section>
         <div className="container mx-auto h-full py-10 space-y-10">
-          <div>
+          <div className=" flex flex-col gap-4">
+            <Link to={"/platform/client/projects"}>
+              <div className="bg-blue-500 w-[100px] py-2 flex justify-center text-white">
+                Go Back
+              </div>
+            </Link>
             <h1 className="text-2xl font-semiBold mb-6">
               Start A New Project With Us
             </h1>

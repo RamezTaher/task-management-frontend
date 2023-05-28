@@ -14,6 +14,7 @@ import AdminSignIn from "./pages/AdminSignIn"
 import ClientDashboard from "./pages/ClientDashboard"
 import ClientStartProject from "./pages/ClientStartProject"
 import ClientControlProjects from "./pages/ClientControlProjects"
+import ClientControlProjectDetail from "./pages/ClientControlProjectDetail"
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
         <Route
           path="/platform/client/projects"
           element={<ClientControlProjects />}
+        />
+        <Route
+          path="/platform/client/projects/:id"
+          element={<ClientControlProjectDetail />}
         />
 
         {/* <Route path="/auth/register" element={<SignUp />} />

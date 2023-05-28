@@ -32,6 +32,10 @@ export const createTicket = (data) => api.post(`/tickets`, data, config)
 export const getProjectsByClient = (status) =>
   api.get(`/tickets/client/all?status=${status}`, config)
 
+export const getProjectById = (id) => api.get(`/tickets/${id}`, config)
+export const updateProject = (id, data) =>
+  api.put(`/tickets/${id}`, data, config)
+
 // Departments
 export const getDepartments = () => axios.get(`${API_URL}/department`, config)
 export const getDepartmentById = (id) =>
