@@ -39,3 +39,4 @@ export const updateProject = (id, data) =>
 
 // Admin
 export const getAllConsultants = () => api.get(`/consultants`, config)
+export const getAllClients = () => api.get(`/clients`, config)

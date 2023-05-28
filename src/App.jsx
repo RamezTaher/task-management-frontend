@@ -11,6 +11,7 @@ import ClientControlProjects from "./pages/ClientControlProjects"
 import ClientControlProjectDetail from "./pages/ClientControlProjectDetail"
 import AdminDashboard from "./pages/AdminDashboard"
 import AdminConsultants from "./pages/AdminConsultants"
+import AdminClients from "./pages/AdminClients"
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           path="/platform/admin/consultants"
           element={<AdminConsultants />}
         />
+        <Route path="/platform/admin/clients" element={<AdminClients />} />
 
         {/* <Route path="/auth/register" element={<SignUp />} />
         <Route path="/platform/dashboard" element={<EmployeeDashboard />} />
