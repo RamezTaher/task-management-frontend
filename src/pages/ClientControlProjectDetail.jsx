@@ -118,8 +118,14 @@ const ClientControlProjectDetail = () => {
                   <div>{project.feedback ?? "No Feedback Yet"}</div>
                 </div>
                 <div className="flex items-center justify-between text-lg font bold">
-                  <div>Project Solution</div>
-                  <div>{project.solution ?? "No Solution Yet"}</div>
+                  <div>Project Solution</div>{" "}
+                  {project.solution ? (
+                    <Link to={project.solution} target="_blank">
+                      <div className="text-primary">Solution Link</div>
+                    </Link>
+                  ) : (
+                    "No Solution Yet"
+                  )}
                 </div>
                 <div className="flex items-center gap-2 justify-center mt-10">
                   {project.status === "resolved" && (

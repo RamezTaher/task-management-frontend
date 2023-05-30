@@ -151,7 +151,16 @@ const AdminProjects = () => {
                       <td>{element.consultants.length}</td>
                       <td>{element.tasks.length}</td>
                       <td>{element.feedback ?? "No Feedback Yet"}</td>
-                      <td>{element.solution ?? "No Solution Yet"}</td>
+                      <td>
+                        {" "}
+                        {element.solution ? (
+                          <Link to={element.solution} target="_blank">
+                            <div className="text-primary">Solution Link</div>
+                          </Link>
+                        ) : (
+                          "No Solution Yet"
+                        )}
+                      </td>
 
                       <td>
                         <Link to={`/platform/admin/projects/${element.id}`}>

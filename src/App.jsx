@@ -16,6 +16,9 @@ import AdminConsultantDetails from "./pages/AdminConsultantDetails"
 import AdminClientDetails from "./pages/AdminClientDetails"
 import AdminProjects from "./pages/AdminProjects"
 import AdminProjectDetails from "./pages/AdminProjectDetails"
+import AdminInterventionType from "./pages/AdminInterventionType"
+import AdminInterventionTypeDetails from "./pages/AdminInterventionTypeDetails"
+import ConsultantDashboard from "./pages/ConsultantDashboard"
 
 function App() {
   return (
@@ -65,20 +68,20 @@ function App() {
           path="/platform/admin/projects/:id"
           element={<AdminProjectDetails />}
         />
-
-        {/* <Route path="/auth/register" element={<SignUp />} />
-        <Route path="/platform/dashboard" element={<EmployeeDashboard />} />
         <Route
-          path="/platform/leave-request/:id"
-          element={<EmployeeLeaveRequest />}
+          path="/platform/admin/intervention-type"
+          element={<AdminInterventionType />}
         />
-        <Route path="/admin/employee" element={<AdminDashboardEmployees />} />
-        <Route path="/admin/employee/:id" element={<AdminEditEmployee />} />
-        <Route path="/admin/leave-request" element={<AdminLeaveRequest />} />
         <Route
-          path="/admin/leave-request/:id"
-          element={<AdminLeaveRequestDetails />}
-        /> */}
+          path="/platform/admin/intervention-type/:id"
+          element={<AdminInterventionTypeDetails />}
+        />
+
+        {/* Consultant */}
+        <Route
+          path="/platform/consultant/dashboard"
+          element={<ConsultantDashboard />}
+        />
       </Routes>
     </>
   )

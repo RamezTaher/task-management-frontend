@@ -138,7 +138,16 @@ const ClientControlProjects = () => {
                         </div>
                       </td>
                       <td>{element.feedback ?? "No Feedback Yet"}</td>
-                      <td>{element.solution ?? "No Solution Yet"}</td>
+                      <td>
+                        {" "}
+                        {element.solution ? (
+                          <Link to={element.solution} target="_blank">
+                            <div className="text-primary">Solution Link</div>
+                          </Link>
+                        ) : (
+                          "No Solution Yet"
+                        )}
+                      </td>
 
                       <td>
                         <Link to={`/platform/client/projects/${element.id}`}>

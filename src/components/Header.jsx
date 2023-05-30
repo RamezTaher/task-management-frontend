@@ -59,6 +59,33 @@ const Header = ({ user }) => {
             </div>
           </div>
         )}
+
+        {user.role === "consultant" && (
+          <div className="flex items-center gap-10">
+            <Link to={"/platform/admin/clients"}>
+              <div className="flex items-center gap-1 text-sm">
+                <FaUserAlt />
+                Clients
+              </div>
+            </Link>
+            <Link to={"/platform/admin/projects"}>
+              <div className="flex items-center gap-1 text-sm">
+                <BiTask />
+                Projects
+              </div>
+            </Link>
+            <Link to={"/platform/admin/interventions"}>
+              <div className="flex items-center gap-1 text-sm">
+                <MdRequestPage />
+                Interventions
+              </div>
+            </Link>
+
+            <div className="cursor-pointer text-sm" onClick={handleLogout}>
+              Logout
+            </div>
+          </div>
+        )}
       </div>
     </header>
   )
