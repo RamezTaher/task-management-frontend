@@ -81,7 +81,11 @@ export const deleteInterventionType = (id) =>
 // Interventions
 export const getAllInterventionsByConsultant = (status) =>
   api.get(`/interventions/consultant/all?status=${status}`, config)
+export const getAllInterventions = (status) =>
+  api.get(`/interventions?status=${status}`, config)
 export const createIntervention = (data) =>
   api.post(`/interventions`, data, config)
 export const deleteIntervention = (id) =>
   api.delete(`/interventions/${id}`, config)
+export const updateIntervention = (id, data) =>
+  api.put(`/interventions/${id}`, data, config)

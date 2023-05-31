@@ -23,6 +23,7 @@ import ConsultantClients from "./pages/ConsultantClients"
 import ConsultantProjects from "./pages/ConsultantProjects"
 import ConsultantProjectDetails from "./pages/ConsultantProjectDetails"
 import ConsultantInterventions from "./pages/ConsultantInterventions"
+import AdminInterventions from "./pages/AdminInterventions"
 
 function App() {
   return (
@@ -79,6 +80,10 @@ function App() {
         <Route
           path="/platform/admin/intervention-type/:id"
           element={<AdminInterventionTypeDetails />}
+        />
+        <Route
+          path="/platform/admin/interventions"
+          element={<AdminInterventions />}
         />
 
         {/* Consultant */}
