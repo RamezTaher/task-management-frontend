@@ -62,19 +62,19 @@ const Header = ({ user }) => {
 
         {user.role === "consultant" && (
           <div className="flex items-center gap-10">
-            <Link to={"/platform/admin/clients"}>
+            <Link to={"/platform/consultant/clients"}>
               <div className="flex items-center gap-1 text-sm">
                 <FaUserAlt />
                 Clients
               </div>
             </Link>
-            <Link to={"/platform/admin/projects"}>
+            <Link to={"/platform/consultant/projects"}>
               <div className="flex items-center gap-1 text-sm">
                 <BiTask />
                 Projects
               </div>
             </Link>
-            <Link to={"/platform/admin/interventions"}>
+            <Link to={"/platform/consultant/interventions"}>
               <div className="flex items-center gap-1 text-sm">
                 <MdRequestPage />
                 Interventions

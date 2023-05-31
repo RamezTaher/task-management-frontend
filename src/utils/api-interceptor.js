@@ -33,6 +33,8 @@ export const logAdmin = (data) => api.post(`/auth/admin/login`, data, config)
 export const createTicket = (data) => api.post(`/tickets`, data, config)
 export const getProjectsByClient = (status) =>
   api.get(`/tickets/client/all?status=${status}`, config)
+export const getProjectsByConsultant = (status) =>
+  api.get(`/tickets/consultant/all?status=${status}`, config)
 
 export const getAllProjects = (status) =>
   api.get(`/tickets?status=${status}`, config)

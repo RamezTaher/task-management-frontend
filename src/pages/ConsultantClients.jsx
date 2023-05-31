@@ -3,20 +3,20 @@ import Header from "../components/Header"
 import {
   getAdminProfile,
   getAllClients,
-  getAllConsultants,
+  getConsultantProfile,
 } from "../utils/api-interceptor"
 import Loader from "../components/Loader"
 import { format, parseISO } from "date-fns"
 import { Link } from "react-router-dom"
 import { FaTimes } from "react-icons/fa"
 
-const AdminClients = () => {
+const ConsultantClients = () => {
   const [user, setUser] = useState({})
   const [consultants, setConsultants] = useState([])
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     setLoading(true)
-    getAdminProfile()
+    getConsultantProfile()
       .then(({ data }) => {
         setUser(data)
         setLoading(false)
@@ -50,7 +50,7 @@ const AdminClients = () => {
       <section>
         <div className="container mx-auto h-full py-10">
           <div className="space-y-4">
-            <Link to={"/platform/admin/dashboard"}>
+            <Link to={"/platform/consultant/dashboard"}>
               <div className="bg-blue-500 w-[100px] py-2 flex justify-center text-white">
                 Go Back
               </div>
@@ -67,7 +67,6 @@ const AdminClients = () => {
                   <th>Phone</th>
                   <th>Date Naissance</th>
                   <th>Role</th>
-                  <th>Modify</th>
                 </tr>
               </thead>
               <tbody>
@@ -87,14 +86,6 @@ const AdminClients = () => {
                         )}{" "}
                     </td>
                     <td>{element.role}</td>
-
-                    <td>
-                      <Link to={`/platform/admin/clients/${element.id}`}>
-                        <div className="h-full w-full flex items-center justify-center">
-                          <FaTimes size={18} />
-                        </div>
-                      </Link>
-                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -106,4 +97,4 @@ const AdminClients = () => {
   )
 }
 
-export default AdminClients
+export default ConsultantClients

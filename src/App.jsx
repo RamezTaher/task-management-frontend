@@ -19,6 +19,9 @@ import AdminProjectDetails from "./pages/AdminProjectDetails"
 import AdminInterventionType from "./pages/AdminInterventionType"
 import AdminInterventionTypeDetails from "./pages/AdminInterventionTypeDetails"
 import ConsultantDashboard from "./pages/ConsultantDashboard"
+import ConsultantClients from "./pages/ConsultantClients"
+import ConsultantProjects from "./pages/ConsultantProjects"
+import ConsultantProjectDetails from "./pages/ConsultantProjectDetails"
 
 function App() {
   return (
@@ -81,6 +84,18 @@ function App() {
         <Route
           path="/platform/consultant/dashboard"
           element={<ConsultantDashboard />}
+        />
+        <Route
+          path="/platform/consultant/clients"
+          element={<ConsultantClients />}
+        />
+        <Route
+          path="/platform/consultant/projects"
+          element={<ConsultantProjects />}
+        />
+        <Route
+          path="/platform/consultant/projects/:id"
+          element={<ConsultantProjectDetails />}
         />
       </Routes>
     </>

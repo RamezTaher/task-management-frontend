@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react"
 import Header from "../components/Header"
-import { Link, useNavigate, useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import {
-  assignConsultantToTicket,
-  getAdminProfile,
-  getAllConsultants,
+  getConsultantProfile,
   getProjectById,
   updateProject,
   updateTask,
@@ -15,24 +13,19 @@ import FeedbackModal from "../components/FeedbackModal"
 import { AiFillPlusCircle } from "react-icons/ai"
 import NewTaskModal from "../components/NewTaskModal"
 
-const AdminProjectDetails = () => {
+const ConsultantProjectDetails = () => {
   const { id } = useParams()
 
   const [user, setUser] = useState({})
   const [project, setProject] = useState({})
   const [loading, setLoading] = useState(false)
-  const [isModelOpen, setIsModelOpen] = useState(false)
   const [isTaskOpen, setIsTaskOpen] = useState(false)
 
-  const [allConsultants, setAllConsultants] = useState([])
-  const [addedConsultant, setAddedConsultant] = useState(null)
   const [solution, setSolution] = useState("")
-
-  const navigate = useNavigate()
 
   useEffect(() => {
     setLoading(true)
-    getAdminProfile()
+    getConsultantProfile()
       .then(({ data }) => {
         setUser(data)
       })
@@ -40,13 +33,6 @@ const AdminProjectDetails = () => {
         setLoading(false)
         console.log(err)
       })
-    getAllConsultants()
-      .then(({ data }) => {
-        setAllConsultants(data)
-        setAddedConsultant(data[0].id)
-        setLoading(false)
-      })
-      .catch((err) => console.log(err))
   }, [])
 
   useEffect(() => {
@@ -63,45 +49,11 @@ const AdminProjectDetails = () => {
       })
   }, [id])
 
-  const closeProject = async (e) => {
-    e.preventDefault()
-    try {
-      const res = await updateProject(id, {
-        status: "closed",
-      })
-
-      if (res.status === 200) {
-        alert("Project Closed (done)")
-        navigate("/platform/admin/projects")
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  const addFeedback = (e) => {
-    e.preventDefault()
-    setIsModelOpen(true)
-  }
   const addTask = (e) => {
     e.preventDefault()
     setIsTaskOpen(true)
   }
 
-  const addConsultantToTicket = async (e) => {
-    e.preventDefault()
-    try {
-      const res = await assignConsultantToTicket(id, {
-        consultantId: addedConsultant,
-      })
-
-      if (res.status === 200) {
-        alert("Consultant Added Successfully")
-        window.location.reload()
-      }
-    } catch (error) {
-      alert(error?.response?.data?.message)
-    }
-  }
   const addSolutionToProject = async (e) => {
     e.preventDefault()
     try {
@@ -163,7 +115,6 @@ const AdminProjectDetails = () => {
 
   return (
     <>
-      {isModelOpen && <FeedbackModal setIsModelOpen={setIsModelOpen} />}
       {isTaskOpen && <NewTaskModal setIsTaskOpen={setIsTaskOpen} />}
       {loading && (
         <div className="fixed top-0 left-0 h-screen w-screen bg-black/80 flex justify-center items-center">
@@ -174,7 +125,7 @@ const AdminProjectDetails = () => {
       <section>
         <div className="container mx-auto h-full py-10">
           <div className="flex flex-col gap-6">
-            <Link to={"/platform/admin/projects"}>
+            <Link to={"/platform/consultant/projects"}>
               <div className="bg-blue-500 w-[100px] py-2 flex justify-center text-white">
                 Go Back
               </div>
@@ -231,21 +182,6 @@ const AdminProjectDetails = () => {
                     )}
                   </div>
                 </div>
-                <div className="flex items-center gap-2 justify-center mt-10">
-                  <button
-                    className="btn bg-blue-500 text-white font-normal rounded-md w-[220px] px-0"
-                    onClick={(e) => closeProject(e)}
-                  >
-                    Close Project (Done)
-                  </button>
-
-                  <button
-                    className="btn bg-blue-500 text-white font-normal rounded-md w-[220px]"
-                    onClick={(e) => addFeedback(e)}
-                  >
-                    Add Feedback
-                  </button>
-                </div>
               </div>
               <div className="col-span-1 flex flex-col gap-6">
                 <img
@@ -254,63 +190,6 @@ const AdminProjectDetails = () => {
                 />
               </div>
 
-              <div className="col-span-2 flex flex-col gap-6 ">
-                <h1 className="text-xl font-semiBold ">
-                  Consultant On This Project
-                </h1>
-
-                {project?.consultants?.length > 0 && (
-                  <table className="border-secondary-tint border-solid border-2 border-collapse w-full table">
-                    <thead>
-                      <tr>
-                        <th>Consultant Nom</th>
-                        <th>Consultant Prenom</th>
-                        <th>Consultant Email</th>
-                        <th>Consultant Phone</th>
-                        <th>Consultant Cin</th>
-                        <th>Consultant Role</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {project.consultants.map((consultant, idx) => (
-                        <tr key={idx}>
-                          <td>{consultant?.nom}</td>
-                          <td>{consultant?.prenom}</td>
-                          <td>{consultant?.email}</td>
-                          <td>{consultant?.phone}</td>
-                          <td>{consultant?.cin}</td>
-                          <td>{consultant?.role}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                )}
-                {project?.consultants?.length === 0 && (
-                  <div>No Consultants Yet</div>
-                )}
-                <h3 className="text-xl font-semiBold">
-                  Add Consultant On This Project
-                </h3>
-                <div className="flex items-center gap-2 ">
-                  <select
-                    className="p-3 border border-solid border-grayish rounded"
-                    onChange={(e) => setAddedConsultant(e.target.value)}
-                  >
-                    {allConsultants.map((consultant) => (
-                      <option key={consultant.id} value={consultant.id}>
-                        {consultant.nom}
-                        {consultant.prenom}
-                      </option>
-                    ))}
-                  </select>
-                  <button
-                    onClick={(e) => addConsultantToTicket(e)}
-                    className="bg-blue-500 w-[200px] text-white px-7 py-4 rounded"
-                  >
-                    Add Consultant
-                  </button>
-                </div>
-              </div>
               <div className="col-span-2 flex flex-col gap-6 ">
                 <div className="text-xl font-semiBold mb-4 flex items-center gap-2">
                   Project Tasks Progress{" "}
@@ -496,4 +375,4 @@ const AdminProjectDetails = () => {
   )
 }
 
-export default AdminProjectDetails
+export default ConsultantProjectDetails
