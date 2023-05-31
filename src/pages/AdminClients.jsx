@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Header from "../components/Header"
-import {
-  getAdminProfile,
-  getAllClients,
-  getAllConsultants,
-} from "../utils/api-interceptor"
+import { getAdminProfile, getAllClients } from "../utils/api-interceptor"
 import Loader from "../components/Loader"
 import { format, parseISO } from "date-fns"
 import { Link } from "react-router-dom"

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
-import { logAdmin, logClient, logConsultant } from "../utils/api-interceptor"
+import { logAdmin } from "../utils/api-interceptor"
 import Loader from "../components/Loader"
 
 const AdminSignIn = () => {

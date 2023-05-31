@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from "react"
 import Header from "../components/Header"
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
+
 import { Link, useNavigate, useParams } from "react-router-dom"
 import {
-  deleteConsultant,
   deleteInterventionType,
   getAdminProfile,
-  getConsultantById,
   getInterventionTypeById,
-  updateConsultant,
   updateInterventionType,
 } from "../utils/api-interceptor"
-import { DatePicker } from "antd"
 import Loader from "../components/Loader"
-import { format, parseISO } from "date-fns"
 
 const AdminInterventionTypeDetails = () => {
   const navigate = useNavigate()

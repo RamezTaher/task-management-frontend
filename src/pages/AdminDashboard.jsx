@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react"
-import { format, parseISO } from "date-fns"
 import Header from "../components/Header"
 import { getAdminProfile } from "../utils/api-interceptor"
 import { useNavigate } from "react-router-dom"
 import Loader from "../components/Loader"
 
 const AdminDashboard = () => {
-  const navigate = useNavigate()
   const [user, setUser] = useState({})
   const [loading, setLoading] = useState(false)
 

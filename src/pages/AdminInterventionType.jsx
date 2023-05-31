@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react"
 import Header from "../components/Header"
 import {
   getAdminProfile,
-  getAllConsultants,
   getAllInterventionTypes,
 } from "../utils/api-interceptor"
 import Loader from "../components/Loader"
-import { format, parseISO } from "date-fns"
 import { Link } from "react-router-dom"
 import { FaTimes } from "react-icons/fa"
 import NewInterventionModal from "../components/NewInterventionModal"

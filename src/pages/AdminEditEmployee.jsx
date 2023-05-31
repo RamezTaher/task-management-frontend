@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import Header from "../components/Header"
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { useNavigate, useParams } from "react-router-dom"
 import {
   deleteEmployee,

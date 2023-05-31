@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Header from "../components/Header"
 import { getClientProfile, getProjectsByClient } from "../utils/api-interceptor"
-import AdminLeaveReqTableRow from "../components/AdminLeaveReqTableRow"
+
 import Loader from "../components/Loader"
 import { format, parseISO } from "date-fns"
 import { Link } from "react-router-dom"

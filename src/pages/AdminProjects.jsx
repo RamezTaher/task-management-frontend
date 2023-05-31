@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Header from "../components/Header"
-import {
-  getAdminProfile,
-  getAllProjects,
-  getClientProfile,
-  getProjectsByClient,
-} from "../utils/api-interceptor"
+import { getAdminProfile, getAllProjects } from "../utils/api-interceptor"
 
 import Loader from "../components/Loader"
 import { format, parseISO } from "date-fns"

@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react"
 import Header from "../components/Header"
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
+
 import { Link, useNavigate, useParams } from "react-router-dom"
 import {
   deleteClient,
-  deleteConsultant,
   getAdminProfile,
   getClientById,
-  getConsultantById,
   updateClient,
-  updateConsultant,
 } from "../utils/api-interceptor"
 import { DatePicker } from "antd"
 import Loader from "../components/Loader"
