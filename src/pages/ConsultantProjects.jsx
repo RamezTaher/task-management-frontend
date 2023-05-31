@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Header from "../components/Header"
 import {
-  getAdminProfile,
-  getAllProjects,
-  getClientProfile,
   getConsultantProfile,
-  getProjectsByClient,
   getProjectsByConsultant,
 } from "../utils/api-interceptor"
 

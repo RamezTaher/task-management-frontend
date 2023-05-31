@@ -22,6 +22,7 @@ import ConsultantDashboard from "./pages/ConsultantDashboard"
 import ConsultantClients from "./pages/ConsultantClients"
 import ConsultantProjects from "./pages/ConsultantProjects"
 import ConsultantProjectDetails from "./pages/ConsultantProjectDetails"
+import ConsultantInterventions from "./pages/ConsultantInterventions"
 
 function App() {
   return (
@@ -96,6 +97,10 @@ function App() {
         <Route
           path="/platform/consultant/projects/:id"
           element={<ConsultantProjectDetails />}
+        />
+        <Route
+          path="/platform/consultant/interventions"
+          element={<ConsultantInterventions />}
         />
       </Routes>
     </>
