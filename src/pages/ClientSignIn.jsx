@@ -15,6 +15,7 @@ const ClientSignIn = () => {
 
   const signInHandler = async (event) => {
     event.preventDefault()
+    window.localStorage.removeItem("token")
     setError("")
     if (email === "" || password === "") {
       setError("All fields are required!")
