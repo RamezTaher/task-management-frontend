@@ -9,18 +9,22 @@ const FeedbackModal = ({ setIsModelOpen }) => {
 
   const addFeedback = async (e) => {
     e.preventDefault()
-    try {
-      const res = await updateProject(id, {
-        feedback,
-        status: "open",
-      })
+    if (feedback) {
+      try {
+        const res = await updateProject(id, {
+          feedback,
+          status: "open",
+        })
 
-      if (res.status === 200) {
-        alert("Feedback Added ")
-        navigate("/platform/client/dashboard")
+        if (res.status === 200) {
+          alert("Feedback Added ")
+          navigate("/platform/client/dashboard")
+        }
+      } catch (error) {
+        console.log(error)
       }
-    } catch (error) {
-      console.log(error)
+    } else {
+      alert("fill all fields")
     }
   }
 
