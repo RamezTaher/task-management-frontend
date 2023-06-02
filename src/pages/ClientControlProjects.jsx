@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react"
 import Header from "../components/Header"
-import { getClientProfile, getProjectsByClient } from "../utils/api-interceptor"
+import {
+  deleteProject,
+  getClientProfile,
+  getProjectsByClient,
+} from "../utils/api-interceptor"
 
 import Loader from "../components/Loader"
 import { format, parseISO } from "date-fns"
 import { Link } from "react-router-dom"
 import { FaTimes } from "react-icons/fa"
+import { BsFillTrashFill } from "react-icons/bs"
 
 const ClientControlProjects = () => {
   const [projectStatus, setProjectStatus] = useState("")
@@ -38,6 +43,19 @@ const ClientControlProjects = () => {
         console.log(err)
       })
   }, [])
+
+  const handleDelete = async (e, id) => {
+    e.preventDefault()
+    alert("Are You Sure You Want To Delete This Project")
+    try {
+      const res = await deleteProject(id)
+      const deletedProject = res.data
+      alert(deletedProject.message)
+      window.location.reload()
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <>
@@ -150,11 +168,19 @@ const ClientControlProjects = () => {
                       </td>
 
                       <td>
-                        <Link to={`/platform/client/projects/${element.id}`}>
-                          <div className="h-full w-full flex items-center justify-center">
-                            <FaTimes size={18} />
-                          </div>
-                        </Link>
+                        <div className="flex items-center gap-2 w-full justify-center">
+                          <Link to={`/platform/client/projects/${element.id}`}>
+                            <div className="h-full w-full flex items-center justify-center">
+                              <FaTimes size={18} color="green" />
+                            </div>
+                          </Link>
+                          <BsFillTrashFill
+                            size={18}
+                            color="red"
+                            onClick={(e) => handleDelete(e, element.id)}
+                            className="cursor-pointer"
+                          />
+                        </div>
                       </td>
                     </tr>
                   ))}

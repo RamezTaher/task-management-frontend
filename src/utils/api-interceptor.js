@@ -48,6 +48,8 @@ export const getAllProjects = (status) =>
 export const getProjectById = (id) => api.get(`/tickets/${id}`, getConfig())
 export const updateProject = (id, data) =>
   api.put(`/tickets/${id}`, data, getConfig())
+export const deleteProject = (id, data) =>
+  api.delete(`/tickets/${id}`, data, getConfig())
 
 export const assignConsultantToTicket = (id, data) =>
   api.patch(`/tickets/${id}`, data, getConfig())
