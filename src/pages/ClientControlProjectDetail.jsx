@@ -155,40 +155,6 @@ const ClientControlProjectDetail = () => {
 
               <div className="col-span-2 flex flex-col gap-6 ">
                 <h1 className="text-xl font-semiBold mb-4">
-                  Consultant On This Project
-                </h1>
-                {project?.consultants?.length > 0 && (
-                  <table className="border-secondary-tint border-solid border-2 border-collapse w-full table">
-                    <thead>
-                      <tr>
-                        <th>Consultant Nom</th>
-                        <th>Consultant Prenom</th>
-                        <th>Consultant Email</th>
-                        <th>Consultant Phone</th>
-                        <th>Consultant Cin</th>
-                        <th>Consultant Role</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {project.consultants.map((consultant, idx) => (
-                        <tr key={idx}>
-                          <td>{consultant?.nom}</td>
-                          <td>{consultant?.prenom}</td>
-                          <td>{consultant?.email}</td>
-                          <td>{consultant?.phone}</td>
-                          <td>{consultant?.cin}</td>
-                          <td>{consultant?.role}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                )}
-                {project?.consultants?.length === 0 && (
-                  <div>No Consultants Yet</div>
-                )}
-              </div>
-              <div className="col-span-2 flex flex-col gap-6 ">
-                <h1 className="text-xl font-semiBold mb-4">
                   Project Tasks Progress
                 </h1>
                 {project?.tasks?.length > 0 && (
