@@ -31,8 +31,10 @@ const ConsultantInterventions = () => {
     getConsultantProfile()
       .then(({ data }) => {
         setUser(data)
+        console.log(user)
         setLoading(false)
       })
+
       .catch((err) => {
         setLoading(false)
         console.log(err)
@@ -86,7 +88,7 @@ const ConsultantInterventions = () => {
     e.preventDefault()
     try {
       const res = await updateIntervention(id, {
-        status: "approved",
+        status: user.role.toLowerCase() === "rh" ? "approved" : "pending",
         accepted_by: user.role,
       })
 
@@ -185,7 +187,7 @@ const ConsultantInterventions = () => {
                         <th>Intervention Description</th>
                         <th>Intervention Start Date</th>
                         <th>Intervention End Date</th>
-                        <th>Accepted BY</th>
+                        <th>Accepted By</th>
                         <th>Consultant Name</th>
                         <th>Consultant Role</th>
                         <th>Intervention Status</th>
@@ -348,7 +350,9 @@ const ConsultantInterventions = () => {
                         allInterventions
                           .filter(
                             (intervention) =>
-                              intervention.accepted_by === "chef de département"
+                              intervention.accepted_by ===
+                                "chef de département" ||
+                              intervention.accepted_by === "rh"
                           )
                           .map((element, idx) => (
                             <tr key={idx}>
