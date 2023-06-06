@@ -136,7 +136,9 @@ const ConsultantInterventions = () => {
               </div>
             </Link>
 
-            {["rh", "chef de projet"].includes(user?.role?.toLowerCase()) && (
+            {["rh", "chef de projet", "chef de département"].includes(
+              user?.role?.toLowerCase()
+            ) && (
               <>
                 <h1 className="text-2xl font-semiBold mb-6">
                   All Interventions History :
