@@ -94,6 +94,11 @@ export const getAllInterventionsByConsultant = (status) =>
   api.get(`/interventions/consultant/all?status=${status}`, getConfig())
 export const getAllInterventions = (status) =>
   api.get(`/interventions?status=${status}`, getConfig())
+export const getAllInterventionsAcceptedBy = (status, accepted) =>
+  api.get(
+    `/interventions/accpted/by?status=${status}&accepted=${accepted}`,
+    getConfig()
+  )
 export const createIntervention = (data) =>
   api.post(`/interventions`, data, getConfig())
 export const deleteIntervention = (id) =>

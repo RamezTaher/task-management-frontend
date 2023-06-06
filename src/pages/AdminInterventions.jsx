@@ -108,7 +108,7 @@ const AdminInterventions = () => {
               </div>
             </Link>
             <h1 className="text-2xl font-semiBold mb-6">
-              Your Interventions History :
+              All Interventions History :
             </h1>
 
             <div className="flex items-center gap-3 mb-4">

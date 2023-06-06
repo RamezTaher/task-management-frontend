@@ -60,7 +60,9 @@ const Header = ({ user }) => {
           </div>
         )}
 
-        {user.role === "consultant" && (
+        {["consultant", "rh", "chef de département", "chef de projet"].includes(
+          user?.role?.toLowerCase()
+        ) && (
           <div className="flex items-center gap-10">
             <Link to={"/platform/consultant/clients"}>
               <div className="flex items-center gap-1 text-sm">
